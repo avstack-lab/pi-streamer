@@ -1,0 +1,43 @@
+[tool.poetry]
+name = "pi-streamer"
+version = "0.1.0-alpha.1"
+description = "Stream video data from raspberry pi"
+authors = ["Spencer Hallyburton <spencer.hallyburton@duke.edu>"]
+readme = "README.md"
+license = "MIT"
+homepage = "https://avstack.org"
+repository = "https://github.com/avstack-lab/pi-streamer"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+]
+keywords = ["AVstack", "raspberry pi"]
+
+[tool.poetry.dependencies]
+python = "~3.9.2"
+pyzmq = "^25.0"
+websocket-client = "^1.5.1"
+
+[tool.poetry.group.test.dependencies]
+pytest = "^7"
+pytest-cov = "^4"
+bandit = "^1.7"
+black = "~22.12.0"
+mypy = "^0"
+isort = "^5.11"
+flake8 = "^5.0"
+snakeviz="^2.1.1"
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q -s"
+testpaths = [
+    "tests",
+    "integration",
+]
+
+[build-system]
+requires = [
+    "poetry-core",
+]
+build-backend = "poetry.core.masonry.api"
